@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_symbols_icons/symbols.dart';
-
-import 'listGoalBloc/list_goal_bloc.dart';
+import 'package:vijaysarthi/navigation/app_route_constants.dart';
 
 class ListGoalCardOptions
     extends StatelessWidget {
@@ -19,10 +18,10 @@ class ListGoalCardOptions
           children: [
             IconButton(
                 onPressed: () {
-                  GetIt.I.get<
-                      ListGoalBloc
-                  >().add(
-                      NavToEditGoal()
+                  GoRouter.of(context)
+                      .pushNamed(
+                    VijaysarthiRouteConstants
+                    .editGoalRoute
                   );
                 },
                 icon: const Icon(
@@ -32,11 +31,8 @@ class ListGoalCardOptions
             ),
             IconButton(
                 onPressed: () {
-                  GetIt.I.get<
-                      ListGoalBloc
-                  >().add(
-                      DeleteGoal()
-                  );
+                  
+
                 },
                 icon: const Icon(
                     Symbols.delete_outline,

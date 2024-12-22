@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vijaysarthi/project/routes/app_route_configuration.dart';
+
+import 'navigation/app_route_configuration.dart';
 
 class Vijaysarthi extends StatelessWidget {
   const Vijaysarthi({super.key});

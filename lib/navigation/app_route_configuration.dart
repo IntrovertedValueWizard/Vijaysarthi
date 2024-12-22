@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vijaysarthi/baseAddEditScreen/base_add_edit_screen.dart';
 import 'package:vijaysarthi/goal/addGoal/add_goal.dart';
 import 'package:vijaysarthi/goal/editGoal/edit_goal_page.dart';
 import 'package:vijaysarthi/pages/todo_overview.dart';
-import 'package:vijaysarthi/project/routes/app_route_constants.dart';
 
-import '../../goal/listGoal/list_goal_page.dart';
-import '../../pages/route_not_found.dart';
+import '../goal/listGoal/list_goal_page.dart';
+import '../pages/route_not_found.dart';
+import 'app_route_constants.dart';
 
 class VijaysarthiRouter {
   GoRouter router = GoRouter(
@@ -21,6 +22,16 @@ class VijaysarthiRouter {
             ListGoalsPage()
             );
       }),
+
+      GoRoute(
+          name: VijaysarthiRouteConstants
+              .baseAddEditRoute,
+          path: '/baseAddEdit',
+          pageBuilder: (context, state){
+            return const MaterialPage(child:
+            BaseAddEditScreen()
+            );
+          }),
 
       GoRoute(
           name: VijaysarthiRouteConstants

@@ -10,8 +10,12 @@ class AddGoalPage extends StatefulWidget {
 class _AddGoalPageState extends State<AddGoalPage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-        child: Text('Add Goal Page')
+    return const
+    Scaffold(
+      body:
+        Center(
+            child: Text('Add Goal Page')
+        )
     );
   }
 }
