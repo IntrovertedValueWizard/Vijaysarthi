@@ -1,0 +1,3 @@
+class AddGoalState {
+  String title = '';
+}

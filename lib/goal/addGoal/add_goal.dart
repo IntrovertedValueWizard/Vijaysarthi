@@ -1,21 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:vijaysarthi/baseAddEditScreen/base_add_edit_screen.dart';
 
-class AddGoalPage extends StatefulWidget {
+
+class AddGoalPage extends StatelessWidget {
   const AddGoalPage({super.key});
 
   @override
-  State<AddGoalPage> createState() => _AddGoalPageState();
-}
-
-class _AddGoalPageState extends State<AddGoalPage> {
-  @override
   Widget build(BuildContext context) {
     return const
-    Scaffold(
-      body:
-        Center(
-            child: Text('Add Goal Page')
-        )
-    );
+    BaseAddEditScreen();
   }
 }

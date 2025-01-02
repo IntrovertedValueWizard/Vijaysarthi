@@ -1,10 +1,13 @@
-class ListGoalState {
-  final String id;
-  final String title;
-  String? description;
+import 'package:flutter/material.dart';
 
-  ListGoalState({
-    required this.id,
-    required this.title
-});
-}
+@immutable
+abstract  class ListGoalState{}
+
+class ListGoalActionState extends
+    ListGoalState{}
+
+class ListGoalInitialState extends 
+    ListGoalState{}
+
+class ListGoalNavigateToAddGoalState extends
+    ListGoalActionState{}

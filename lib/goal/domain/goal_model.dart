@@ -1,0 +1,3 @@
+class GoalModel {
+  String title = '';
+}

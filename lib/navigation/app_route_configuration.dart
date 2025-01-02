@@ -11,12 +11,12 @@ import 'app_route_constants.dart';
 
 class VijaysarthiRouter {
   GoRouter router = GoRouter(
-    initialLocation: '/',
+    initialLocation: '/listGoal',
     routes: [
       GoRoute(
           name: VijaysarthiRouteConstants
               .listGoalRoute,
-          path: '/',
+          path: '/listGoal',
           pageBuilder: (context, state){
             return const MaterialPage(child:
             ListGoalsPage()
