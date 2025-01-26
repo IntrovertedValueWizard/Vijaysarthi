@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vijaysarthi/core/navigation/route_config.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '../core/navigation/route_config.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,20 +13,19 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       routeInformationParser:
-      RouteConfig()
+      RouteConfig
           .router
           .routeInformationParser,
 
       routeInformationProvider:
-      RouteConfig()
+      RouteConfig
           .router
           .routeInformationProvider,
 
       routerDelegate:
-      RouteConfig()
-      .router
-      .routerDelegate,
+      RouteConfig
+          .router
+          .routerDelegate,
     );
   }
 }
-

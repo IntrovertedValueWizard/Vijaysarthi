@@ -1,0 +1,4 @@
+enum Entity{
+  goal,
+
+}
