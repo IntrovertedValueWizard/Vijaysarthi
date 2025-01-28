@@ -8,3 +8,6 @@ class ListAllGoalsEvent extends
 
 class NavigateToAddGoalEvent extends
     ListGoalEvent {}
+
+class ListGoalInitialEvent extends
+    ListGoalEvent{}

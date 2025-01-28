@@ -10,7 +10,8 @@ import 'package:vijaysarthi/goal/domain/repository/goal_repo.dart';
 part 'list_goal_event.dart';
 part 'list_goal_state.dart';
 
-class ListGoalBloc extends Bloc<ListGoalEvent, ListGoalState> {
+class ListGoalBloc extends Bloc<ListGoalEvent,
+    ListGoalState> {
   ListGoalBloc() : super(ListGoalInitial()) {
 
     on<ListAllGoalsEvent>(
@@ -19,6 +20,10 @@ class ListGoalBloc extends Bloc<ListGoalEvent, ListGoalState> {
 
     on<NavigateToAddGoalEvent>(
         navigateToAddGoalEvent
+    );
+
+    on<ListGoalInitialEvent>(
+    listGoalInitialEvent
     );
 
     add(ListAllGoalsEvent());
@@ -38,10 +43,19 @@ class ListGoalBloc extends Bloc<ListGoalEvent, ListGoalState> {
       ListAllGoalsEvent event,
       Emitter<ListGoalState> emit
       ) async {
-    final list = await GetIt.I
+    emit(ListGoalLoadingState());
+    var list = await GetIt.I
         .get<GoalRepo>()
         .readGoals();
     print(list.length);
     emit(ListGoalLoadedState(goals: list));
+  }
+
+  FutureOr<void> listGoalInitialEvent(
+      ListGoalInitialEvent event,
+      Emitter<ListGoalState> emit) async {
+    await GetIt.I
+        .get<GoalRepo>()
+        .readGoals();
   }
 }

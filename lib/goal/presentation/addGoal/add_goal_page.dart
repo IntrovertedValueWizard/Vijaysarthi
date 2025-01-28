@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:uuid/uuid.dart';
 import 'package:vijaysarthi/core/navigation/route_consts.dart';
+import 'package:vijaysarthi/goal/presentation/listGoal/list_goal_bloc.dart';
 
 import '../../domain/model/goal_model.dart';
 import 'add_goal_bloc.dart';
@@ -26,9 +27,7 @@ class AddGoalPage extends StatelessWidget {
       listener: (context, state) {
 
         if(state is NavigateToListGoalState){
-          GoRouter.of(context).pushNamed(
-            RouteConsts.listGoal
-          );
+          GoRouter.of(context).pop();
         }
 
 
@@ -62,20 +61,17 @@ class AddGoalPage extends StatelessWidget {
 
                 ElevatedButton(
                     onPressed: (){
-                      GetIt.I.get<
+                      GetIt.I
+                          .get<
                           AddGoalBloc>()
-                      .add(
-                        InsertGoalEvent(
-                          model:
-                          GoalModel(
-                            id: const Uuid()
-                                .v4(),
-                            title:
-                              titleController
-                                  .text
-                          )
-                        )
+                          .add(
+                          InsertGoalEvent(
+                              model:
+                              GoalModel(
+                                  id: Uuid().v4(),
+                                  title: titleController.text))
                       );
+
                     },
                     child: const Text(
                         'Save')

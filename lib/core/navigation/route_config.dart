@@ -9,8 +9,9 @@ import '../../goal/presentation/editGoal/edit_goal_page.dart';
 import '../../goal/presentation/listGoal/list_goal_bloc.dart';
 
 class RouteConfig {
+
   static final GoRouter router = GoRouter(
-    initialLocation: '/addGoal',
+    initialLocation: '/',
 
       routes: [
 
@@ -23,7 +24,6 @@ class RouteConfig {
               );
             }
         ),
-
 
         GoRoute(
             name: RouteConsts.editGoal,
